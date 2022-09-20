@@ -9,12 +9,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Model
+class PostSubscription extends Model
 {
-    protected $table = 'user';
+    protected $table = 'post_subscription';
     public $fillable = [
-        'email'
+        'subscription_id',
     ];
 
-
+    public function subscription(){
+        return $this->belongsTo(Subscription::class);
+    }
 }

@@ -9,12 +9,18 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Model
+class Post extends Model
 {
-    protected $table = 'user';
+    protected $table = 'post';
     public $fillable = [
-        'email'
+        'website_id',
+        'title',
+        'description',
+        'scheduled_at',
+        'is_sent',
     ];
 
-
+    public function website(){
+        return $this->belongsTo(Website::class);
+    }
 }
