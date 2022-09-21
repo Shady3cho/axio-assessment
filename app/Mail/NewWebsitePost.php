@@ -31,7 +31,7 @@ class NewWebsitePost extends Mailable
     public function build()
     {
         return $this
-            ->view('view.mail.new_website_post')
+            ->view('mail.new_website_post')
             ->with(['post' => $this->post]);
     }
 }

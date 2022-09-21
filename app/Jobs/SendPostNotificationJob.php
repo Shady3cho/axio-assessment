@@ -25,6 +25,7 @@ class SendPostNotificationJob implements ShouldQueue
     public function __construct(Post $post)
     {
         $this->post = $post;
+        $this->postRepository = app()->make(PostRepositoryInterface::class);
     }
 
     /**
