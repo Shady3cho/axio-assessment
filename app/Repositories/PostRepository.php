@@ -39,7 +39,6 @@ class PostRepository implements PostRepositoryInterface
                     'post_id' => $post->id
                 ]);
             }catch (\Exception $ex){
-                throw $ex;
             }
         }
 
