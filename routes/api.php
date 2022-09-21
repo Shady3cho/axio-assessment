@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'website'], function () {
-    Route::post('public', [WebsiteController::class, 'addWebsite']);
+    Route::post('', [WebsiteController::class, 'addWebsite']);
     Route::post('{id}/add-post', [WebsiteController::class, 'addPost']);
 });
 

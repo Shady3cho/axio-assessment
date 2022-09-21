@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "3203fa9f-e2e4-42a6-9dd8-170a858e3fb8",
+		"name": "Axio Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4458929"
+	},
+	"item": [
+		{
+			"name": "Website",
+			"item": [
+				{
+					"name": "Add Website",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Another websoite",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/website",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"website"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Second Post",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This is the first post",
+									"type": "text"
+								},
+								{
+									"key": "scheduled_at",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/website/2/add-post",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"website",
+								"2",
+								"add-post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Subscribe Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "langtonmwanza@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "website_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/1/subscribe",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"1",
+								"subscribe"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
