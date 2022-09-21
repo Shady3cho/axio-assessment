@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('post_subscription', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('subscription_id')->unsigned();
+            $table->bigInteger('post_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('subscription_id')->references('id')->on('subscription');
+            $table->foreign('post_id')->references('id')->on('post');
         });
     }
 

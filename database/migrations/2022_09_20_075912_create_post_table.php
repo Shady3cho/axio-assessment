@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('website_id')->unsigned();
             $table->string('title');
             $table->text('description');
-            $table->dateTime('scheduled_at');
+            $table->dateTime('scheduled_at')->nullable();
             $table->boolean('is_sent')->default(false);
             $table->timestamps();
 

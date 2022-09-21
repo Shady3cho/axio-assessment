@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendPostNotificationJob;
 use App\Models\Website;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use DateTimeZone;
+use DateTime;
 
 class WebsiteController extends Controller
 {
@@ -51,6 +54,14 @@ class WebsiteController extends Controller
                 $request->toArray()
             );
 
+
+
+        $delay = 0;
+        if($post->scheduled){
+            $dt = new DateTime($post->scheduled_at, new DateTimeZone('Africa/Harare'));
+            $delay = $dt->getTimestamp() - time();
+        }
+        $this->dispatch((new SendPostNotificationJob($post))->delay($delay));
         return response()->json($post);
     }
 }

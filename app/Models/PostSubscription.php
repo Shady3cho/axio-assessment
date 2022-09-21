@@ -14,6 +14,7 @@ class PostSubscription extends Model
     protected $table = 'post_subscription';
     public $fillable = [
         'subscription_id',
+        'post_id',
     ];
 
     public function subscription(){
