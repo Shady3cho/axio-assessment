@@ -40,6 +40,10 @@ class UserController extends Controller
         $website = Website::findOrFail($request->website_id);
         $user = User::findOrFail($id);
 
+        $subscription = $website->subscriptions->where('user_id', $id)->first();
+        if($subscription)
+            throw new \Exception('User already subscribed to this website');
+
         $subscription = Subscription::
             create([
                 'user_id' => $user->id,
